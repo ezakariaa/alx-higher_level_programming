@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
+
 def uppercase(str):
-    '''Function prints a string in uppercase followed by a new line'''
-    for lettre in str:
-        if ord(lettre) >= 97 and ord(lettre) <= 122:
-            lettre = chr(ord(lettre) - 32)
-        print("{}".format(lettre), end='')
+    '''Prints a string in uppercase followed by a new line'''
+    for letter in str:
+        if ord(letter) >= 97 and ord(letter) <= 122:
+            letter = chr(ord(letter) - 32)
+        print("{}".format(letter), end='')
     print("")

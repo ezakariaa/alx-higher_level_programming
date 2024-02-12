@@ -2,15 +2,15 @@
 
 class Rectangle:
     """
-        number_of_instances (int): Rectangle instances' numbers.
+        number_of_instances (int): The Rectangle instances' numbers.
     """
 
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
-            width (int): new rectangle width.
-            height (int): new rectangle height.
+            width (int): The new rectangle width.
+            height (int): The new rectangle height.
         """
 
         type(self).number_of_instances += 1

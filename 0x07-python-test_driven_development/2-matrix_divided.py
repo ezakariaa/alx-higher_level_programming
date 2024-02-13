@@ -3,12 +3,12 @@
 
 
 def matrix_divided(matrix, div):
-    """divides all elements of a matrix,
-    and returns a new matrix representing the result of the division.
+    """function that divides all elements of a matrix,
+    & returns a new matrix represent result of the division.
 
     Args:
-        matrix (list): A list of lists of ints or floats.
-        div (int/float): The divisor.
+        matrix (list): list of lists of ints or floats.
+        div (int/float): divisor.
     Raises:
         TypeError: If the matrix contains non-numbers.
         TypeError: If the matrix contains rows of different sizes.

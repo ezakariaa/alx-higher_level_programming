@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-"""
-displays all values in the states table of hbtn_0e_0_usa
-where name matches the argument
-"""
+"""Lists states"""
 
-import sys
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
-    data_base = MySQLdb.connect(user=sys.argv[1],
-                                passwd=sys.argv[2],
-                                db=sys.argv[3])
-    cur = data_base.cursor()
-    cur.execute("SELECT * FROM `states`")
-    [print(state) for state in cur.fetchall() if state[1] == sys.argv[4]]
+    conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3], charset="utf8")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id ASC",
+                (argv[4], ))
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        print(row)
+    cur.close()
+    conn.close()

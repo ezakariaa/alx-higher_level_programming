@@ -1,17 +1,22 @@
 #!/usr/bin/python3
-"""Lists states"""
+"""
+class definition of a State
+contains the class definition of a State and an instance Base
+"""
 
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
 
-class City(Base):
-    """Class representing the states table"""
-    __tablename__ = 'cities'
+class State(Base):
+    """Represents a state for a MySQL database.
 
-    id = Column(Integer, nullable=False, primary_key=True,
-                autoincrement=True, unique=True)
+    __tablename__ (str): The name of the MySQL table.
+    id (sqlalchemy.Integer): represents a column of an auto-generated
+    name (sqlalchemy.String): represents a column of a string
+    """
+    __tablename__ = "states"
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
